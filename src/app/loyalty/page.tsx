@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
+import LoyaltyCard from "@/components/LoyaltyCard";
 
 export default function LoyaltyPage() {
   return (
@@ -42,65 +43,9 @@ export default function LoyaltyPage() {
           </div>
 
           {/* Right Hero Card */}
-          <div className="z-10 flex justify-center lg:justify-end">
-            <div className="bg-[#050505] rounded-2xl p-8 border border-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)] w-full max-w-[550px] relative overflow-hidden">
-               {/* Subtle gradient inside card matching screenshot */}
-               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gray-700 to-transparent opacity-30" />
-               
-               {/* Card Header */}
-               <div className="flex justify-between items-start mb-8">
-                 <div>
-                   <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1 pl-1">VEHICLE NUMBER</p>
-                   <div className="bg-white text-black font-bold py-1.5 px-3 rounded text-sm inline-block shadow-inner">
-                     OD - XX - XXXX
-                   </div>
-                 </div>
-                 <div className="w-8 h-8 bg-[#2D6A4F] rounded-sm flex items-center justify-center shadow-[0_0_10px_rgba(45,106,79,0.5)]">
-                   <span className="material-icons text-white text-sm">directions_car</span>
-                 </div>
-               </div>
-
-               {/* Title */}
-               <h2 className="text-center font-black text-3xl mb-10 tracking-wider">
-                 <span className="text-[#FFB703]">MDK LOYALTY CARD</span>
-               </h2>
-
-               {/* Stamps Grid */}
-               <div className="flex flex-col gap-6 mb-12">
-                 {/* Row 1: 5 stamps */}
-                 <div className="flex justify-center gap-3 sm:gap-4 md:gap-5">
-                   {[...Array(4)].map((_, i) => (
-                     <div key={`r1-${i}`} className="w-[3rem] h-[3rem] sm:w-[4rem] sm:h-[4rem] rounded-full border-[2.5px] border-[#4D8BFF] flex items-center justify-center" />
-                   ))}
-                   {/* 5th Stamp - 50% OFF */}
-                   <div className="w-[3rem] h-[3rem] sm:w-[4rem] sm:h-[4rem] rounded-full bg-white border-[3px] border-[#4D8BFF] flex flex-col items-center justify-center shadow-[0_0_20px_rgba(77,139,255,0.4)] relative">
-                     <span className="text-[#FFB703] font-black leading-none" style={{fontSize: "clamp(0.8rem, 3vw, 1.25rem)"}}>50%</span>
-                     <span className="text-[#FFB703] font-black leading-none" style={{fontSize: "clamp(0.4rem, 1.5vw, 0.6rem)"}}>OFF</span>
-                   </div>
-                 </div>
-
-                 {/* Row 2: 6 stamps */}
-                 <div className="flex justify-center gap-3 sm:gap-4 md:gap-5">
-                   {[...Array(5)].map((_, i) => (
-                     <div key={`r2-${i}`} className="w-[3rem] h-[3rem] sm:w-[4rem] sm:h-[4rem] rounded-full border-[2.5px] border-[#4D8BFF]" />
-                   ))}
-                   {/* 11th Stamp - FREE */}
-                   <div className="w-[3.5rem] h-[3.5rem] sm:w-[4.5rem] sm:h-[4.5rem] rounded-full bg-transparent border-[3px] border-[#4D8BFF] flex items-center justify-center p-1 relative shadow-[0_0_20px_rgba(77,139,255,0.4)] transform hover:scale-105 transition-transform" style={{marginTop: "-0.25rem"}}>
-                      <div className="w-full h-full bg-[#4D8BFF] rounded-full flex items-center justify-center opacity-90 shadow-inner">
-                        <span className="text-[#FFB703] font-black text-xs sm:text-base tracking-wider drop-shadow-md">FREE</span>
-                      </div>
-                   </div>
-                 </div>
-               </div>
-
-               {/* Card Footer Text */}
-               <div className="text-center font-black uppercase text-white tracking-widest text-[0.65rem] sm:text-xs leading-relaxed space-y-1 drop-shadow-md">
-                 <p>GET <span className="text-[#e63946]">50% OFF</span> ON YOUR 5<sup className="text-[0.5rem] sm:text-[0.6rem]">TH</sup> WASH</p>
-                 <p>&amp; AFTER YOUR NEXT 5 WASHES, GET YOUR 6<sup className="text-[0.5rem] sm:text-[0.6rem]">TH</sup> WASH <span className="text-[#e63946]">FREE</span></p>
-               </div>
-               <p className="text-center text-gray-500 italic text-[0.6rem] mt-4 opacity-70">
-                 * Loyalty rewards apply only to Car Wash services.
-               </p>
+          <div className="z-10 flex justify-center lg:justify-end w-full lg:w-1/2">
+            <div className="transform hover:scale-105 transition-transform duration-500 w-full max-w-xl mr-0 md:-mr-8">
+              <LoyaltyCard />
             </div>
           </div>
         </div>

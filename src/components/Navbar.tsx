@@ -63,24 +63,12 @@ export default function Navbar() {
             {["Home", "Services", "Loyalty Program", "Contact"].map(
               (item) => {
                 let href = "/";
-                if (item === "Services") href = "/#services";
+                if (item === "Services") href = "/services";
                 if (item === "Loyalty Program") href = "/loyalty";
                 if (item === "Contact") href = "/#contact";
                 
                 // Determine if active based on path. This is a bit simplistic, given hash links vs paths.
-                const isActive = item === "Loyalty Program" ? pathname === "/loyalty" : (pathname === "/" && item === "Home");
-
-                if (item === "Loyalty Program") {
-                  return (
-                    <Link
-                      key={item}
-                      href={href}
-                      className="bg-[#FFB703] text-gray-900 px-5 py-2.5 rounded hover:bg-[#ffaa00] transition-colors font-bold shadow-sm"
-                    >
-                      {item}
-                    </Link>
-                  );
-                }
+                const isActive = item === "Loyalty Program" ? pathname === "/loyalty" : item === "Services" ? pathname === "/services" : (pathname === "/" && item === "Home");
 
                 return (
                   <Link
@@ -147,24 +135,11 @@ export default function Navbar() {
             <div className="flex flex-col space-y-3 pt-4">
               {[
                 { label: "Home", href: "/" },
-                { label: "Services", href: "/#services" },
+                { label: "Services", href: "/services" },
                 { label: "Loyalty Program", href: "/loyalty" },
                 { label: "Contact", href: "/#contact" },
               ].map((item) => {
-                const isActive = item.label === "Loyalty Program" ? pathname === "/loyalty" : (pathname === "/" && item.label === "Home");
-                
-                if (item.label === "Loyalty Program") {
-                  return (
-                    <Link
-                      key={item.label}
-                      href={item.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="px-4 py-2 font-bold rounded-lg transition-colors bg-[#FFB703] text-gray-900 hover:bg-[#ffaa00]"
-                    >
-                      {item.label}
-                    </Link>
-                  )
-                }
+                const isActive = item.label === "Loyalty Program" ? pathname === "/loyalty" : item.label === "Services" ? pathname === "/services" : (pathname === "/" && item.label === "Home");
                 
                 return (
                   <Link

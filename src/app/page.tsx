@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import LoyaltyCard from "@/components/LoyaltyCard";
 
 export default function Home() {
 
@@ -104,9 +106,9 @@ export default function Home() {
                 </div>
                 <h3 className="font-display font-bold text-xl mb-3 text-gray-900 dark:text-white">Foam Wash</h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">High-pressure foam wash that removes dirt and grime without scratching your paintwork.</p>
-                <a href="#" className="inline-flex items-center text-secondary dark:text-primary font-semibold text-sm hover:underline">
+                <Link href="/services/foam-wash" className="inline-flex items-center text-secondary dark:text-primary font-semibold text-sm hover:underline">
                   Learn More <span className="material-icons text-sm ml-1">arrow_forward</span>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -221,80 +223,8 @@ export default function Home() {
             </div>
 
             {/* Right - Loyalty Card Visual */}
-            <div className="w-full lg:w-1/2 flex justify-center">
-              <div className="w-full max-w-md bg-black rounded-2xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-800 relative transform rotate-1 hover:rotate-0 transition-all duration-500">
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-2xl blur opacity-25" />
-                <div className="relative bg-black rounded-xl p-6 h-full border border-gray-800">
-                  {/* Card Top */}
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="text-white">
-                      <p className="text-[10px] text-gray-400 uppercase tracking-widest mb-1">
-                        Vehicle Number
-                      </p>
-                      <div className="bg-white/10 h-8 w-32 rounded border border-white/20" />
-                    </div>
-                    <div className="text-right">
-                      <h3 className="font-display font-black text-xl md:text-2xl text-secondary-light leading-none">
-                        MDK AUTOSPA
-                      </h3>
-                      <h3 className="font-display font-black text-xl md:text-2xl text-primary leading-none">
-                        LOYALTY CARD
-                      </h3>
-                    </div>
-                  </div>
-
-                  {/* Stamps Row 1 */}
-                  <div className="flex flex-col gap-4 mb-6 px-1">
-                    <div className="grid grid-cols-5 gap-3">
-                      <div className="aspect-square rounded-full border-2 border-secondary-light flex items-center justify-center">
-                        <span className="material-icons text-secondary-light text-xl opacity-50">
-                          check
-                        </span>
-                      </div>
-                      {[...Array(3)].map((_, i) => (
-                        <div
-                          key={`r1-${i}`}
-                          className="aspect-square rounded-full border-2 border-secondary-light"
-                        />
-                      ))}
-                      <div className="aspect-square rounded-full bg-primary border-2 border-primary flex flex-col items-center justify-center text-center transform scale-125 shadow-[0_0_15px_rgba(255,193,7,0.6)] z-10 relative">
-                        <span className="text-gray-900 font-black text-[10px] leading-none">
-                          50%
-                        </span>
-                        <span className="text-gray-900 font-bold text-[8px] leading-none">
-                          OFF
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Stamps Row 2 */}
-                    <div className="grid grid-cols-6 gap-2">
-                      {[...Array(5)].map((_, i) => (
-                        <div
-                          key={`r2-${i}`}
-                          className="aspect-square rounded-full border-2 border-secondary-light"
-                        />
-                      ))}
-                      <div className="aspect-square rounded-full bg-primary border-2 border-primary flex flex-col items-center justify-center text-center transform scale-125 shadow-[0_0_15px_rgba(255,193,7,0.6)] z-10 relative">
-                        <span className="text-gray-900 font-black text-[10px] leading-none">
-                          FREE
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Card Footer */}
-                  <div className="text-center mt-6 border-t border-gray-800 pt-4">
-                    <p className="text-white text-xs font-medium uppercase tracking-wide">
-                      Get{" "}
-                      <span className="text-primary font-bold">50% OFF</span>{" "}
-                      on 5th Wash &{" "}
-                      <span className="text-primary font-bold">FREE</span> Wash
-                      after 6 more
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div className="w-full lg:w-[55%] flex justify-center transform hover:scale-105 transition-all duration-500 max-w-xl xl:max-w-2xl mx-auto">
+              <LoyaltyCard />
             </div>
           </div>
         </div>
